@@ -1,0 +1,20 @@
+<body>
+<input  type="search" class=" search rounded" placeholder="Search Movies" (keyup)= "onSearch($event)" />
+
+    <i class="fas fa-search"></i>
+
+    
+<button class="btn btn-primary" (click)= "Reload()"> Reload</button> <br>
+<button class="btn btn-primary" (click)="onPreviousClick()">Previous</button>
+<button class="btn btn-primary next" (click)="onNextClick()">Next</button>
+
+<div class="container">
+    <div (click) = "expand($event)" class="{{className}}"  *ngFor="let movie of searched_data">
+        <div class="img" ><img src="https://ui-avatars.com/api/?name={{movie.title}}" alt="hello"></div>
+        <h5 class="title">TITLE - {{movie.title}}</h5>
+        <h5 class="desc">DESCRIPTION- <br>{{movie.description}}</h5>
+        <h5>GENRE - {{movie.genres}}</h5>
+    </div>
+</div>
+
+</body>
